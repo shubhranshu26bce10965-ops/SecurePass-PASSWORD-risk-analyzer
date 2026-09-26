@@ -24,7 +24,6 @@ How To Run:
 4. Enter a password and click analyze.
 
 Author:
-
-Shubhranshu Tiwari
-26BCE10965
-VIT Bhopal University.
+-Shubhranshu Tiwari
+-26BCE10965
+-VIT Bhopal University.
