@@ -1,20 +1,20 @@
-SecurePass: Password Risk Analyzer
+# SecurePass: Password Risk Analyzer
 
-PROBLEM:
+## PROBLEM:
 
 Weak passwords are one of the main reasons for account hacking.Many users create passwords without checking their strength, making their personal data vulnerable. This project helps users analyze the security of a password and understand how it can be improved.
 
-SCOPE
+## SCOPE
 
 The application evaluates a password using common security rules such as length, numbers ,uppercase letters, lowercase letters and special Characters.
 It generates a security score and classifies the password as Low, Medium or High Risk.
 
-Target Users:
+## Target Users:
 - Students
 - General Computer users
 - Beginners learning CyberSecurity
 
-High Level Features
+## High Level Features
 - Analyze password strength.
 - Generate a risk score (0-100)
 - Classify risk level.
