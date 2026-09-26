@@ -1,50 +1,39 @@
-# analyzer.py
+#analyzer.py
 
 def analyze_password(password):
     score = 0
     suggestions = []
 
-    has_upper = False
-    has_lower = False
-    has_digit = False
-    has_special = False
+    rules = {
+        "length": len(password) >= 8,
+        "upper": any(ch.isupper() for ch in password),
+        "lower": any(ch.islower() for ch in password),
+        "digit": any(ch.isdigit() for ch in password),
+        "special": any(ch in "@#$%&*!" for ch in password)
+    }
 
-    special_chars = "@#$%&*!"
+    unique_chars = set(password)
+    rule_names = ("length", "upper", "lower", "digit", "special")
 
-    for ch in password:
-        if ch.isupper():
-            has_upper = True
-        elif ch.islower():
-            has_lower = True
-        elif ch.isdigit():
-            has_digit = True
-        elif ch in special_chars:
-            has_special = True
+    for rule in rule_names:
+        if rules[rule]:
+            score += 20
 
-    if len(password) >= 8:
-        score += 20
-    else:
+    if not rules["length"]:
         suggestions.append("Use at least 8 characters")
-
-    if has_upper:
-        score += 20
-    else:
+    if not rules["upper"]:
         suggestions.append("Add an uppercase letter")
-
-    if has_lower:
-        score += 20
-    else:
+    if not rules["lower"]:
         suggestions.append("Add a lowercase letter")
-
-    if has_digit:
-        score += 20
-    else:
+    if not rules["digit"]:
         suggestions.append("Add a number")
-
-    if has_special:
-        score += 20
-    else:
+    if not rules["special"]:
         suggestions.append("Add a special character")
+
+    if len(unique_chars) >= 10:
+        score += 5
+
+    score = min(score, 100)
 
     if score >= 80:
         risk = "Low Risk"
