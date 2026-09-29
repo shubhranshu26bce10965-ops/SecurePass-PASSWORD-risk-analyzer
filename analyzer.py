@@ -1,5 +1,3 @@
-#analyzer.py
-
 def analyze_password(password):
     score = 0
     suggestions = []
@@ -18,7 +16,6 @@ def analyze_password(password):
     for rule in rule_names:
         if rules[rule]:
             score += 20
-
     if not rules["length"]:
         suggestions.append("Use at least 8 characters")
     if not rules["upper"]:
@@ -29,7 +26,6 @@ def analyze_password(password):
         suggestions.append("Add a number")
     if not rules["special"]:
         suggestions.append("Add a special character")
-
     if len(unique_chars) >= 10:
         score += 5
 
