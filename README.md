@@ -22,6 +22,8 @@ SecurePass is a python application that analyzes the strength of a password and 
 2. Open the project folder.
 3. Run main.py
 4. Enter a password and click analyze.
+5. if error occurs then type cd "SecurePass-PASSWORD-risk-analyzer" in terminal.
+6. then type python main.py
 
 ## Author:
 - Shubhranshu Tiwari
