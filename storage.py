@@ -1,5 +1,3 @@
-# storage.py
-
 def save_result(password, score, risk):
     file = open("history.txt", "a")
 
